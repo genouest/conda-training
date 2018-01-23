@@ -42,9 +42,9 @@ jobs:
 env:
   global:
     - SUBDAGS=1
-    - CONDA_UTILS_TAG=master
-    - CONDA_UTILS_BUILD_ARGS="--loglevel=info"
-    - CONDA_UTILS_LINT_ARGS=
+    - BIOCONDA_UTILS_TAG=master
+    - BIOCONDA_UTILS_BUILD_ARGS="--loglevel=info"
+    - BIOCONDA_UTILS_LINT_ARGS=
     - MINICONDA_VER="4.3.21"
   matrix:
     - SUBDAG=0
