@@ -24,7 +24,7 @@ requirements:
 
 test:
   commands:
-    - bedtools-test
+    - bedtools
 
 about:
   home: http://bedtools.readthedocs.org/
