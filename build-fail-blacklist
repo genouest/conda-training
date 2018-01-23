@@ -16,7 +16,6 @@ recipes/blasr_libcpp
 # tracking master branch
 recipes/frc
 
-
 #OSX failures - library loading
 recipes/r-spp
 recipes/r-pscbs/0.61.0
