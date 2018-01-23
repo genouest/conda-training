@@ -4,9 +4,9 @@ set -euo pipefail
 set +u
 [[ -z $DOCKER_ARG ]] && DOCKER_ARG=""
 [[ -z $TRAVIS ]] && TRAVIS="false"
-[[ -z $CONDA_UTILS_LINT_ARGS ]] && BIOCONDA_UTILS_LINT_ARGS=""
+[[ -z $BIOCONDA_UTILS_LINT_ARGS ]] && BIOCONDA_UTILS_LINT_ARGS=""
 [[ -z $RANGE_ARG ]] && RANGE_ARG="--git-range master HEAD"
-[[ -z $DISABLE_CONDA_UTILS_BUILD_GIT_RANGE_CHECK  ]] && DISABLE_CONDA_UTILS_BUILD_GIT_RANGE_CHECK="false"
+[[ -z $DISABLE_BIOCONDA_UTILS_BUILD_GIT_RANGE_CHECK  ]] && DISABLE_BIOCONDA_UTILS_BUILD_GIT_RANGE_CHECK="false"
 [[ -z $SKIP_LINTING ]] && SKIP_LINTING=false
 set -u
 
@@ -68,4 +68,11 @@ then
     DOCKER_ARG="--docker --mulled-test"
 fi
 
-set -x; bioconda-utils build recipes config.yml $UPLOAD_ARG $DOCKER_ARG $RANGE_ARG; set +x;
+if [[ $DISABLE_BIOCONDA_UTILS_BUILD_GIT_RANGE_CHECK == "true" ]]
+then
+    echo
+    echo "DISABLE_BIOCONDA_UTILS_BUILD_GIT_RANGE_CHECK is true."
+    echo "A comprehensive check will be performed to see what needs to be built."
+    RANGE_ARG=""
+fi
+set -x; bioconda-utils build recipes config.yml $UPLOAD_ARG $DOCKER_ARG $BIOCONDA_UTILS_BUILD_ARGS $RANGE_ARG; set +x;
