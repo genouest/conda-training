@@ -1,0 +1,30 @@
+{% set name = "fleeqtk" %}
+{% set version = "1.3" %}
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: v1.2.zip
+  url: https://github.com/lh3/seqtk/archive/v1.2.zip
+  sha256: 0bc5b79a34b29f6504f55ab61d27d59b3ae35259995b64ef3acbeb7050dba95e
+
+build:
+    number: 0
+
+requirements:
+  build:
+   - gcc # [linux]
+   - llvm # [osx]
+  run:
+   - libgcc # [linux]
+
+test:
+  commands:
+    - seqtk seq
+    - seqtk sample
+
+about:
+  home: https://github.com/lh3/seqtk
+  license: GPL v2
+  summary: A powerful toolset for genome arithmetic
