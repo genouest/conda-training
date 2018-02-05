@@ -168,7 +168,6 @@ jobs:
           command: bioconda-utils build recipes config.yml --anaconda-upload
 
 
-
 workflows:
   version: 2
   # workflow for testing pushes and PRs
