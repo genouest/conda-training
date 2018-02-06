@@ -14,9 +14,11 @@ No upload to anaconda or quai.io repositories.
 
 You can build and test your recipe in the same environment that bioconda with circleci client.
 
-On your bioconda recipe directory :
+### Install the client:
 
 `curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x /usr/local/bin/circleci`
+
+### On your bioconda recipe directory :
 
 `circleci build`
 
