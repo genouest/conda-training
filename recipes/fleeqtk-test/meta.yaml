@@ -1,4 +1,4 @@
-{% set name = "fleeqtk" %}
+{% set name = "fleeqtk-test" %}
 {% set version = "1.2" %}
 package:
   name: {{ name }}
