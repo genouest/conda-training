@@ -186,12 +186,3 @@ workflows:
               ignore:
 #                - master
                 - bulk
-      - test-macos:
-          requires:
-            - lint
-            - test-linux
-          filters:
-            branches:
-              ignore:
-#                - master
-                - bulk
