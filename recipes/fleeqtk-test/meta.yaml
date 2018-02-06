@@ -24,8 +24,7 @@ requirements:
 
 test:
   commands:
-    - seqtk seq
-    - seqtk sample
+    - seqtk --help
 
 about:
   home: https://github.com/lh3/seqtk
