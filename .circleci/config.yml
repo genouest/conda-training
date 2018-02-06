@@ -176,7 +176,7 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+#                - master
                 - bulk
       - test-linux:
           requires:
@@ -184,7 +184,7 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+#                - master
                 - bulk
       - test-macos:
           requires:
@@ -193,5 +193,5 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+#                - master
                 - bulk
