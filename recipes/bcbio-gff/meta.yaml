@@ -30,3 +30,4 @@ about:
   home: https://github.com/chapmanb/bcbb/tree/master/gff
   license: Bipython Licence
   summary: 'Read and write Generic Feature Format (GFF) with Biopython integration.'
+  license_family: OTHER
