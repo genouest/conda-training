@@ -1,0 +1,43 @@
+package:
+  name: ngsutils
+  version: "0.5.9"
+
+source:
+  fn: ngsutils-0.5.9.tar.gz
+  url: https://pypi.python.org/packages/49/0e/a656f0c8eba496b93ccc8a03de6d8677080c56aeb7f5b6096684bc6865e0/ngsutils-0.5.9.tar.gz
+  md5: 20cfc368d96a69a7bc233807f624d7e0
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - pysam >=0.7.5
+    - coverage >=3.5.3
+    - eta >=0.9
+    - swalign >=0.2
+
+  run:
+    - python
+    - pysam >=0.7.5
+    - coverage >=3.5.3
+    - eta >=0.9
+    - swalign >=0.2
+
+test:
+  # Python imports
+  imports:
+    - ngsutils
+    - ngsutils.bam
+    - ngsutils.bed
+    - ngsutils.fastq
+    - ngsutils.gtf
+    - ngsutils.ngs
+    - ngsutils.support
+
+about:
+  home: http://ngsutils.org
+  license: BSD
+  summary: 'NGSUtils - Various utilities for working with NGS data'
+  license_family: OTHER
