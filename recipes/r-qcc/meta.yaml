@@ -1,0 +1,44 @@
+{% set version = '2.7' %}
+
+package:
+  name: r-qcc
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: qcc_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/qcc_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/qcc/qcc_{{ version }}.tar.gz
+  sha256: ff139a046e6b139ac25537b69be24e0ff32d6a39db6c941d1d02b4710f378251
+
+
+build:
+  number: 0
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base
+    - r-mass
+
+  run:
+    - r-base
+    - r-mass
+
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('qcc')"  # [not win]
+    - "\"%R%\" -e \"library('qcc')\""  # [win]
+
+
+about:
+  home: https
+  license: GPL (>= 2)
+  summary: Shewhart quality control charts for continuous, attribute and count data. Cusum and
+    EWMA charts. Operating characteristic curves. Process capability analysis. Pareto
+    chart and cause-and-effect chart. Multivariate control charts.
+  license_family: GPL3
