@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-WORKSPACE=/tmp/workspace
+WORKSPACE=`pwd`
 
 # Common definitions from latest bioconda-utils master have to be downloaded before setup.sh is executed.
 # This file can be used to set BIOCONDA_UTILS_TAG and MINICONDA_VER.
@@ -35,7 +35,7 @@ if ! type bioconda-utils > /dev/null; then
     conda config --add channels bioconda
 
     # step 3: install bioconda-utils
-    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt git
+    conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/$BIOCONDA_UTILS_TAG/bioconda_utils/bioconda_utils-requirements.txt
     pip install git+https://github.com/bioconda/bioconda-utils.git@$BIOCONDA_UTILS_TAG
 
     # step 4: configure local channel
