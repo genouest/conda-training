@@ -1,0 +1,24 @@
+package:
+  name: seqtk-go
+  version: 1.2
+about:
+  home: https://github.com/lh3/seqtk
+  license: MIT
+  summary: seqtk
+build:
+  number: 0
+  skip: True # [osx]
+source:
+  fn: v1.2.tar.gz
+  url: https://github.com/lh3/seqtk/archive/v1.2.tar.gz
+  md5: 255ffe05bf2f073dc57abcff97f11a37
+requirements:
+  build:
+    - gcc
+    - zlib {{ CONDA_ZLIB  }}*
+  run:
+    - libgcc
+    - zlib {{ CONDA_ZLIB  }}*
+test:
+  commands:
+    - seqtk sample
