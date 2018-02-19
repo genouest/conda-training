@@ -15,10 +15,10 @@ requirements:
   build:
     - gcc # [not osx]
     - llvm # [osx]
-    - zlib
+    - zlib {{ CONDA_ZLIB}}*
   run:
     - libgcc
-    - zlib
+    - zlib {{ CONDA_ZLIB}}*
 test:
   commands:
     - seqtk sample
