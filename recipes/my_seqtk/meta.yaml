@@ -15,10 +15,10 @@ source:
 requirements:
   build:
     - gcc
-    - zlib
+    - zlib {{ CONDA_ZLIB }}*
   run:
     - libgcc
-    - zlib
+    - zlib {{ CONDA_ZLIB }}*
 test:
   commands:
     - seqtk sample
