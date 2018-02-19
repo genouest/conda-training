@@ -1,5 +1,5 @@
 package:
-  name: seqtk
+  name: seqtk-go
   version: 1.2
 about:
   home: https://github.com/lh3/seqtk
