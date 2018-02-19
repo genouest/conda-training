@@ -1,0 +1,29 @@
+package:
+  name: seqtk-eo
+  version: 1.2
+
+source:
+  fn: v1.2.tar.gz
+  url: https://github.com/lh3/seqtk/archive/v1.2.tar.gz
+  md5: 255ffe05bf2f073dc57abcff97f11a37
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - gcc   # [not osx]
+    - llvm  # [osx]
+    - zlib {{CONDA_ZLIB}}*
+  run:
+    - zlib {{CONDA_ZLIB}}*
+    - libgcc  # [not osx]
+
+test:
+  commands:
+    - seqtk sample
+
+about:
+  home: https://github.com/lh3/seqtk
+  license: GPL3
+  summary: Seqtk is a fast and lightweight tool for processing sequences in the FASTA or FASTQ format.
