@@ -17,7 +17,7 @@ requirements:
     - gcc
     - zlib {{ CONDA_ZLIB  }}*
   run:
-    - gcc
+    - libgcc
     - zlib {{ CONDA_ZLIB  }}*
 test:
   commands:
